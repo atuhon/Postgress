@@ -13,7 +13,7 @@ public class Users implements Serializable {
 	private Integer id;
 	private String name;
 	private String password;
-	
+	public Users() {}
 	public Users(Integer id, String name, String password) {
 		super();
 		this.id = id;

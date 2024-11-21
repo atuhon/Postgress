@@ -23,7 +23,7 @@ public class UserRepoImple implements UserRepository{
 
 
 	public void insertData() {
-		System.out.println("tes");
+
 		try {
 			
 		Users user=jdbctemplate.queryForObject("SELECT * FROM \"Users\" where id=?",
@@ -32,7 +32,7 @@ public class UserRepoImple implements UserRepository{
 						rs.getString("name"),
 						rs.getString("password")
 						),3);
-		System.out.println(user);
+
 		}catch(Exception e) {
 			System.out.println(e);
 		}

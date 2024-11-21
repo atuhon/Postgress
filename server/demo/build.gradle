@@ -31,6 +31,15 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 	implementation 'org.springframework.session:spring-session-core'
+	    // dbunit
+    testImplementation "org.dbunit:dbunit:${dbunit_version}"
+    // poi
+    testImplementation "org.apache.poi:poi:${poi_version}"
+    // poi-ooxml
+    testImplementation "org.apache.poi:poi-ooxml:${poi_version}"
+    // spring-test-dbunit
+    testImplementation "com.github.springtestdbunit:spring-test-dbunit:${spring_test_dbunit_version}"
+	
 
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -43,4 +52,8 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+test {
+// previous JVM options
+jvmArgs("-noverify", "-XX:+EnableDynamicAgentLoading", "-Djdk.instrument.traceUsage") // add this
 }

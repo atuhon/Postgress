@@ -1,0 +1,16 @@
+spring:
+  # データベースの接続設定
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/todo
+    username: root
+    password: root
+    hikari:
+      connection-timeout: 60000
+      validationTimeout: 30000
+      maximum-pool-size: 2
+  transaction:
+    rollback-on-commit-failure: true
+  sql:
+    init:
+      mode: always

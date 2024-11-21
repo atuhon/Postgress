@@ -19,6 +19,9 @@ public class TodoServiceImple implements TodoService{
 
 
 	public List<todo> todoservce() {
+		List<todo> list=todorepository.selectTodo();
+		list.forEach(lists->System.out.println(lists));
+	
 		return todorepository.selectTodo();
 	
 		

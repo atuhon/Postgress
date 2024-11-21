@@ -13,6 +13,7 @@ public class todo {
 	private Integer id;
 	private String title;
 	private String desc;
+	public todo() {}
 	public todo(Integer id, String title, String desc) {
 		super();
 		this.id = id;
