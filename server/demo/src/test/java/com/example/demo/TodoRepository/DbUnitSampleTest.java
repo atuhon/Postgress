@@ -13,24 +13,34 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.Repository.TodoRepository;
 import com.example.demo.InputData.XlsDataSetLoader;
 import com.github.springtestdbunit.TransactionDbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 
-@SpringBootTest(classes = DbUnitSampleTest.Config.class, webEnvironment = WebEnvironment.NONE)@TestExecutionListeners({
+@SpringBootTest
+@TestExecutionListeners({
     DependencyInjectionTestExecutionListener.class,
     DirtiesContextTestExecutionListener.class,
     TransactionDbUnitTestExecutionListener.class})
 @DbUnitConfiguration(dataSetLoader = XlsDataSetLoader.class)
 @Transactional
+@DatabaseSetup("/testdata.xlsx")
 class DbUnitSampleTest {
 
-	 @JdbcTest
-    static class Config {
-    	
-        // テストに必要なクラスをbean登録する処理など
-    }
 	 @Test
-	 void selectTest() {
+	 void テストデータを読みこむ() {
 		 
 	 }
-
+	 @Test
+	 void テストDBに登録する() {
+		 
+	 }
+	 @Test
+	 void テストDBから削除する() {
+		 
+	 }
+	 @Test
+	 void テストデータの情報を更新する() {
+		 
+	 }
+	 
 }
