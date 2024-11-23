@@ -30,7 +30,7 @@ public class TodoRepositoryTest {
 		
 	}
 	@Test
-	void test1() {
+	void Mockから値を受け取る() {
 		System.out.println("値が通るか確認");
 		 List<todo> list=todorepository.selectTodo();
 		 System.out.println(list);
