@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.Repository.TodoRepository;
 import com.example.common.todo;
+import com.example.common.input.TodoInput;
 
 @Service
 public class TodoServiceImple implements TodoService{
@@ -26,6 +27,13 @@ public class TodoServiceImple implements TodoService{
 	
 		
 		
+	}
+	public int insertTodoData(TodoInput todoinput) {
+		todo todo=new todo();
+		todo.setId(todoinput.getId());
+		todo.setTitle(todoinput.getTitle());
+		todo.setDesc(todoinput.getDesc());
+		return todorepository.insertTodo(todo);
 	}
 
 }

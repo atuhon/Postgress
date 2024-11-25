@@ -39,11 +39,17 @@ TODO
  
 <body>
     <div class="inputForm">
-    <form action="" method="post">
-    <input type="text" name="" id="" placeholder="タスク入力">
-    <input type="submit" value="送信">
-</form>
+		<form th:action="@{/todo/form}" method="post" th:object="${todoInput}">
+		    <input type="text" name="title" placeholder="タイトル入力">
+
+
+		    <input type="text" name="desc" placeholder="タスクの内容">
+
+
+		    <input type="submit" value="送信">
+		</form>
 </div>
+
     <table border="2">
         <tr>
             <th>タイトル</th>
@@ -57,6 +63,7 @@ TODO
         </tr>
 
     </table>
+	
     
 </body>
 </html>

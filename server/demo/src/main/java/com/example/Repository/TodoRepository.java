@@ -8,6 +8,7 @@ import com.example.common.todo;
 
 public interface TodoRepository {
 	public List<todo> selectTodo();
+	public int insertTodo(todo todo);
 	
 
 }

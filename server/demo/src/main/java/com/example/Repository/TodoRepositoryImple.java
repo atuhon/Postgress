@@ -22,6 +22,8 @@ public class TodoRepositoryImple implements TodoRepository {
 
 	@Autowired
 private JdbcTemplate jdbctemplate;
+	
+	private todo todo;
 
 
 	
@@ -30,9 +32,16 @@ public List<todo> selectTodo() {
 
 return jdbctemplate.query("SELECT * FROM todo", tm);
 
-
-
 }
+
+
+public int insertTodo(todo todo) {
+	int rowNumber =jdbctemplate.update("INSERT INTO todo (title, description) VALUES (?, ?)",
+		todo.getTitle(),todo.getDesc()
+		);
+	return rowNumber;
+}
+
    
    
 

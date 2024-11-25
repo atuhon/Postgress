@@ -17,9 +17,9 @@ public class TodoMapper implements RowMapper<todo> {
    todo td=new todo(
 			rs.getInt("id"),
 			rs.getString("title"),
-			rs.getString("desc")
+			rs.getString("description")
 		   );
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stu
 		return td;
 	}
 

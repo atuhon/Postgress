@@ -22,7 +22,7 @@ public class UserRepoImple implements UserRepository{
 	
 
 
-	public void insertData() {
+	public void selectData() {
 
 		try {
 			

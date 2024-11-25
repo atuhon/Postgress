@@ -26,7 +26,7 @@ public class TodoappApplication {
 	}
 	 @PostConstruct
 	 public void repos() {
-		 repo.insertData();
+		 repo.selectData();
 	 }
 	 @PostConstruct
 	 public void selectTodo() {
