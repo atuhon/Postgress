@@ -40,14 +40,14 @@ class DbUnitSampleTest {
 	@Autowired
 	TodoRepository todorepository;
 
-	
+
 	
 
 	 @Test
 	 void テストデータを読みこむ1件() {
 
 	List<todo> list=todorepository.selectTodo();
-	System.out.println(list);
+
 	assertThat(list.get(0).getId()).isEqualTo(3);
 	assertThat(list.get(0).getTitle()).isEqualTo("test6");
 	assertThat(list.get(0).getDesc()).isEqualTo("test");
@@ -66,17 +66,19 @@ class DbUnitSampleTest {
 			assertThat(list.get(1).getDesc()).isEqualTo("test2");
 		}
 		 
-	 }
 	
-	
-
-	 
-
-
 	 @Test
 	 void テストDBに登録する() {
+		 todo todo=new todo();
+		 todo.setId(45);
+		 todo.setTitle("JDBC");
+		 todo.setDesc("内容の確認");
+	
+		int insertTodo = todorepository.insertTodo(todo);
+		assertThat(insertTodo).isEqualTo(1);
+		 }
 		 
-	 }
+	 
 	 @Test
 	 void テストDBから削除する() {
 		 
